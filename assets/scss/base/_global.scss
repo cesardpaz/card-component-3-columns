@@ -1,0 +1,114 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html{
+    font-size: 62.5%;
+}
+*{
+    box-sizing: border-box;
+}
+body {
+    font-size: 1.5rem;
+}
+
+.container {
+    padding: 1.5rem 1.5rem;
+}
+
+.orange {
+    background-color: v.$orange;
+    a{
+        color: v.$orange;
+    }
+}
+
+.cyan {
+    background-color: v.$cyan;
+    a {
+        color: v.$cyan;
+    }
+}
+
+.dark-cyan {
+    background-color: v.$dark_cyan;
+    a {
+        color: v.$dark_cyan;
+    }
+}
+
+.br-top {
+    border-radius: .6rem .6rem 0 0;
+    @include m.desktop { 
+        border-radius: .6rem 0 0 .6rem;
+    }
+}
+.br-bottom {
+    border-radius: 0 0 .6rem .6rem;
+    @include m.desktop { 
+        border-radius: 0 .6rem .6rem 0;
+    }
+}
+
+.block {
+    display: flex;
+    flex-wrap: wrap;
+}
+.block__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 4rem;
+    justify-content: space-between;
+
+    @include m.desktop { 
+        width: 33.333%;
+    }
+    figure {
+        margin-top: 0;
+        margin-bottom: 3rem;
+        img{
+            width: 5.8rem;
+            height: auto;
+        }
+    }
+
+    h2 {
+        font-family: v.$font_shoulders;
+        font-size: 3.5rem;
+        color: v.$gray;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+
+    p {
+        color: v.$white;
+        font-family: v.$font_lexend;
+        font-size: 1.3rem;
+        line-height: 2.2rem;
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+
+    a {
+        background-color: v.$gray;
+        border-radius: 2rem;
+        border: .2rem solid v.$gray;
+        padding: 1rem 2rem;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-family: v.$font_lexend;
+        transition: all 0.4s ease;
+
+        @include m.desktop { 
+            margin-top: 4rem;
+        }
+
+        &:hover {
+            background-color: transparent;
+            color: v.$gray;
+        }
+    }
+}
